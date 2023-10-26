@@ -57,7 +57,7 @@ describe('User Authentication API', () => {
    // Test for the updateEmail controller
    it('should update the user email', (done) => {
     chai.request(app)
-      .post('/api/auth/update-email')
+      .post('/api/auth/updateEmail')
       .send({ username: 'testuser', newEmail: 'newemail@example.com' })
       .end((err, res) => {
         res.should.have.status(200);
@@ -70,7 +70,7 @@ describe('User Authentication API', () => {
 // Test for the forgetPassword controller
 it('should request a password reset', (done) => {
     chai.request(app)
-      .post('/api/auth/forget-password')
+      .post('/api/auth/forgetPassword')
       .send({ email: 'test@example.com' })
       .end((err, res) => {
         res.should.have.status(200);
@@ -83,7 +83,7 @@ it('should request a password reset', (done) => {
   // Test for the resetPassword controller
   it('should reset the user password', (done) => {
     chai.request(app)
-      .post('/api/auth/reset-password')
+      .post('/api/auth/resetPassword')
       .send({ email: 'test@example.com', newPassword: 'newtestpassword' })
       .end((err, res) => {
         res.should.have.status(200);
